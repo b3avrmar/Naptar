@@ -1,0 +1,8 @@
+J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\bin\Debug\naptar.exe.config
+J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\bin\Debug\naptar.exe
+J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\bin\Debug\naptar.pdb
+J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\obj\Debug\naptar.csproj.AssemblyReference.cache
+J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\obj\Debug\naptar.csproj.CoreCompileInputs.cache
+J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\obj\Debug\naptar.exe
+J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\obj\Debug\naptar.pdb
+J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\obj\Debug\naptar.exe.config
