@@ -12,7 +12,7 @@ namespace naptar
     {
         static void Main(string[] args)
         {
-            List<Esemeny> esemenyek = new List<Esemeny>();
+            List<Esemeny> esemenyek = Esemenyek_betoltese();
 
             string[,] naptar = Naptar_generalas();
             Menu(naptar, esemenyek);
@@ -26,6 +26,32 @@ namespace naptar
             public string Leiras;
             public string Felhasznalo;
 
+        }
+
+        static List<Esemeny> Esemenyek_betoltese()
+        {
+            List<Esemeny> esemenyek = new List<Esemeny>();
+            if (File.Exists("esemenyek.csv"))
+            {
+                string[] lines = File.ReadAllLines("esemenyek.csv");
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(';');
+                    if (parts.Length == 5)
+                    {
+                        Esemeny esemeny = new Esemeny
+                        {
+                            Nev = parts[0],
+                            Datum = DateTime.Parse(parts[1]),
+                            Idotartam = TimeSpan.Parse(parts[2]),
+                            Leiras = parts[3],
+                            Felhasznalo = parts[4]
+                        };
+                        esemenyek.Add(esemeny);
+                    }
+                }
+            }
+            return esemenyek;
         }
 
         static void Menu(string[,] naptar, List<Esemeny> esemenyek)
