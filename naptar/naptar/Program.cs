@@ -47,10 +47,9 @@ namespace naptar
                     Esemeny_hozzaadas(esemenyek);
                     break;
                 case 3:
-                    Legkozelebbi_esemeny();
+                    Legkozelebbi_esemeny(esemenyek);
                     break;
                 case 4:
-                    Kilepes();
                     break;
                 default:
                     Console.WriteLine("Hibás opció, próbálja újra.");
@@ -122,14 +121,38 @@ namespace naptar
             return esemenyek;
         }
 
-        static void Legkozelebbi_esemeny()
+        static void Legkozelebbi_esemeny(List<Esemeny> esemenyek)
         {
-            Console.WriteLine("Legközelebbi esemény megjelenítése");
-        }
+            Random rnd = new Random();
+            int nap = rnd.Next(1, 30);
+            DateTime date = new DateTime(2028, 2, nap);
 
-        static void Kilepes()
-        {
-            Console.WriteLine("Kilépés");
+            Console.WriteLine($"Keresett dátum: {date.ToShortDateString()}");
+
+            if (esemenyek.Count == 0)
+            {
+                Console.WriteLine("Nincsenek események a listában.");
+                return;
+            }
+
+            Esemeny legkozelebbi = esemenyek[0];
+            TimeSpan legkisebbKulonbseg = TimeSpan.MaxValue;
+
+            foreach (Esemeny esemeny in esemenyek)
+            {
+                TimeSpan kulonbseg = (esemeny.Datum - date).Duration();
+
+                if (kulonbseg < legkisebbKulonbseg)
+                {
+                    legkisebbKulonbseg = kulonbseg;
+                    legkozelebbi = esemeny;
+                }
+            }
+
+            Console.WriteLine($"\nLegközelebbi esemény:");
+            Console.WriteLine($"Név: {legkozelebbi.Nev}");
+            Console.WriteLine($"Dátum: {legkozelebbi.Datum.ToShortDateString()}");
+            Console.WriteLine($"Különbség: {legkisebbKulonbseg.Days} nap");
         }
 
         static void Mentes(List<Esemeny> esemenyek)
