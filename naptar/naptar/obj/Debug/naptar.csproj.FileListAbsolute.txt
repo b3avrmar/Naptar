@@ -6,3 +6,11 @@ J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\obj\Debug\naptar.csproj.CoreC
 J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\obj\Debug\naptar.exe
 J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\obj\Debug\naptar.pdb
 J:\2025-2026\Asztali_alk\0126\naptar\naptar\naptar\obj\Debug\naptar.exe.config
+Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\bin\Debug\naptar.exe.config
+Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\bin\Debug\naptar.exe
+Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\bin\Debug\naptar.pdb
+Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\obj\Debug\naptar.csproj.AssemblyReference.cache
+Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\obj\Debug\naptar.exe.config
+Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\obj\Debug\naptar.csproj.CoreCompileInputs.cache
+Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\obj\Debug\naptar.exe
+Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\obj\Debug\naptar.pdb

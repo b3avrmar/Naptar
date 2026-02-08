@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,20 +12,23 @@ namespace naptar
     {
         static void Main(string[] args)
         {
-           string[,] naptar = Naptar_generalas();
-            Menu(naptar);
+            List<Esemeny> esemenyek = new List<Esemeny>();
+
+            string[,] naptar = Naptar_generalas();
+            Menu(naptar, esemenyek);
         }
 
         public struct Esemeny
         {
             public string Nev;
-            public Datetime Datum;
+            public DateTime Datum;
+            public TimeSpan Idotartam;
             public string Leiras;
             public string Felhasznalo;
 
         }
 
-        static void Menu(string[,] naptar)
+        static void Menu(string[,] naptar, List<Esemeny> esemenyek)
         {
             Console.WriteLine("1. Naptár megjelenítése");
             Console.WriteLine("2. Esemény hozzáadása");
@@ -39,7 +44,7 @@ namespace naptar
                     Naptar_megjelenites(naptar);
                     break;
                 case 2:
-                    Esemeny_hozzaadas();
+                    Esemeny_hozzaadas(esemenyek);
                     break;
                 case 3:
                     Legkozelebbi_esemeny();
@@ -51,7 +56,7 @@ namespace naptar
                     Console.WriteLine("Hibás opció, próbálja újra.");
                     Console.ReadKey();
                     Console.Clear();
-                    Menu(naptar);
+                    Menu(naptar, esemenyek);
                     break;
             }
         }
@@ -98,9 +103,22 @@ namespace naptar
 
         }
 
-        static void Esemeny_hozzaadas()
+        static List<Esemeny> Esemeny_hozzaadas(List<Esemeny> esemenyek)
         {
-            Console.WriteLine("Esemény hozzáadása");
+            Console.Write("Add meg space-el elválasztva az esemény nevét, dátumát, időtartamát, leírását és a felhasználó nevét: ");
+            string[] input = Console.ReadLine().Split(' ');
+
+            Esemeny ujEsemeny = new Esemeny
+            {
+                Nev = input[0],
+                Datum = DateTime.Parse(input[1]),
+                Idotartam = TimeSpan.Parse(input[2]),
+                Leiras = input[3],
+                Felhasznalo = input[4]
+            };
+
+            esemenyek.Add(ujEsemeny);
+            return esemenyek;
         }
 
         static void Legkozelebbi_esemeny()
@@ -117,11 +135,6 @@ namespace naptar
         static void Mentes()
         {
             Console.WriteLine("Adatok mentése");
-        }
-
-        public struct Datetime
-        {
-            
         }
     }
 }
