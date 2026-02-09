@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static naptar.Program;
 
 namespace naptar
 {
@@ -125,18 +126,35 @@ namespace naptar
                 }
                 Console.WriteLine();
             }
-
         }
 
         static List<Esemeny> Esemeny_hozzaadas(List<Esemeny> esemenyek)
         {
-            Console.Write("Add meg space-el elválasztva az esemény nevét, dátumát, időtartamát, leírását és a felhasználó nevét: ");
+            Console.WriteLine("Új esemény hozzáadása");
+            Console.WriteLine("Kérlek add meg az alábbi adatokat SZÓKÖZZEL elválasztva, EGY SORBAN:");
+            Console.WriteLine("1. Esemény neve (pl: Meeting)");
+            Console.WriteLine("2. Nap száma 1-29 között (pl: 15)");
+            Console.WriteLine("3. Kezdési időpont óra:perc formátumban 8:00-19:59 között (pl: 14:30)");
+            Console.WriteLine("4. Időtartam percben 30-120 között (pl: 60)");
+            Console.WriteLine("5. Leírás (pl: Fontos-megbeszeles)");
+            Console.WriteLine("6. Felhasználó neve (pl: Kovacs)");
+            Console.WriteLine();
+            Console.WriteLine("Példa: Meeting 15 14:30 60 Fontos-megbeszeles anya/apa");
+            Console.WriteLine();
+            Console.Write("Input mező: ");
+
             string[] input = Console.ReadLine().Split(' ');
 
-            DateTime datum = DateTime.Parse(input[1]);
-            TimeSpan idotartam = TimeSpan.Parse(input[2]);
+            int nap = int.Parse(input[1]);
+            string[] idopont = input[2].Split(':');
+            int ora = int.Parse(idopont[0]);
+            int perc = int.Parse(idopont[1]);
+            int percek = int.Parse(input[3]);
 
-            if (datum.Hour < 8 || datum.Hour >= 20)
+            DateTime datum = new DateTime(2028, 2, nap, ora, perc, 0);
+            TimeSpan idotartam = TimeSpan.FromMinutes(percek);
+
+            if (ora < 8 || ora >= 20)
             {
                 Console.WriteLine("Hiba: Az esemény csak reggel 8 és este 20 óra között vehető fel!");
                 return esemenyek;
@@ -153,12 +171,14 @@ namespace naptar
                 Nev = input[0],
                 Datum = datum,
                 Idotartam = idotartam,
-                Leiras = input[3],
-                Felhasznalo = input[4]
+                Leiras = input[4],
+                Felhasznalo = input[5]
             };
 
             esemenyek.Add(ujEsemeny);
             Mentes(esemenyek);
+
+            Console.WriteLine("Esemény sikeresen hozzáadva!");
             return esemenyek;
         }
 

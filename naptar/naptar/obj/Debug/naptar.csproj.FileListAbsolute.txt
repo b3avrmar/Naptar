@@ -14,3 +14,11 @@ Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\obj\Debug\naptar.exe.c
 Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\obj\Debug\naptar.csproj.CoreCompileInputs.cache
 Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\obj\Debug\naptar.exe
 Z:\Iskola\2025-2026\Asztali_alk\0202\naptar\naptar\naptar\obj\Debug\naptar.pdb
+C:\Users\Mark\Source\Repos\Naptar\naptar\naptar\bin\Debug\naptar.exe.config
+C:\Users\Mark\Source\Repos\Naptar\naptar\naptar\bin\Debug\naptar.exe
+C:\Users\Mark\Source\Repos\Naptar\naptar\naptar\bin\Debug\naptar.pdb
+C:\Users\Mark\Source\Repos\Naptar\naptar\naptar\obj\Debug\naptar.csproj.AssemblyReference.cache
+C:\Users\Mark\Source\Repos\Naptar\naptar\naptar\obj\Debug\naptar.exe.config
+C:\Users\Mark\Source\Repos\Naptar\naptar\naptar\obj\Debug\naptar.csproj.CoreCompileInputs.cache
+C:\Users\Mark\Source\Repos\Naptar\naptar\naptar\obj\Debug\naptar.exe
+C:\Users\Mark\Source\Repos\Naptar\naptar\naptar\obj\Debug\naptar.pdb
